@@ -1,16 +1,20 @@
-﻿#include <stdio.h>
+#include <stdio.h>
 #define n 10
- int fact(int k) // вычесление факториала
+
+ int fact(int k) 
 {
-	if (k == 1)
-		return 1;
-	else return k * fact(k - 1);
+	 int res=1;
+	 for (int i = 1; i <= k; i++) {
+		 res = res * i;
+	 }
+	 return res;
 }
 int main()
+
 {
 	int m = 0, ms[n], i;
 	printf("fill the array - ");
-	for (i = 0; i < n; i++)
+	for (i = 0; i < n; i++)//цикл по элементам массива 
 	{
 		scanf_s("%d", &ms[i]);
 	}
