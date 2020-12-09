@@ -54,7 +54,7 @@ int main()
 			else if (m[i][j] == 0) pob--;
 		}
 		pob++;
-		if (pob > 0) k++;
+		if (pob > 2) k++;
 	}
 	if (k > 0)
 		printf("\nnumber of teams, thats have more win, than defeat: %d", k);
