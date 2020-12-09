@@ -1,9 +1,9 @@
-﻿#include <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
-
+#include <time.h>
 int main()
 {
-	
+
 	int** m = 0, N = 0, pob = 0, i, j, k = 0;
 	do
 	{
@@ -11,6 +11,7 @@ int main()
 		printf("\nenter size of matrix\n");
 		rewind(stdin);
 		i = scanf_s("%d", &N);
+		srand(time(0));
 		if (i < 1)
 		{
 			fflush(stdin); // чистка буффера клавиатуры при ошибке ввода
@@ -69,7 +70,8 @@ int main()
 			if (m[i][j] == 2) pob++;
 		}
 		pob++;
-		if (pob == N) printf("%d ", i + 1);
+
+		if (pob == N) printf("%d ", i++ );
 	}
 	printf("\n");
 	for (i = 0; i < N; i++)
@@ -81,7 +83,7 @@ int main()
 		}
 		if (pob > (N - 1) / 2) k++;
 	}
-	if (k > 1) printf("there is at least one team that has won more than half of the games: %d", k);
-	else printf("there are no teams that have won more than half of the games: %d", k);
+	if (k > 0) printf("there is at least one team that has won more than half of the games: %d", k);
+	else printf("there are no teams that have won more than half of the games");
 	return 0;
 }
